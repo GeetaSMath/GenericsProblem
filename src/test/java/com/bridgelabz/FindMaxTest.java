@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class FindMaxTest {
+public class FindMaxTest<max> {
     FindMax findMax;
 
     @Before
@@ -46,4 +46,23 @@ public class FindMaxTest {
         Float max = findMax.findMaxValue(350f, 110f, 450f);
         Assertions.assertEquals((Float) 450f, max);
     }
+    @Test
+    public void givenFirstStringAsLarge_ShouldReturn_FirstStringAsMax() {
+        String max = findMax.findMaxValue("350", "110", "215");
+        Assertions.assertEquals((String)"350", max);
+    }
+
+    @Test
+    public void givenSecondStringAsLarge_ShouldReturn_ThirdStringAsMax() {
+        String max = findMax.findMaxValue("350", "450", "215");
+        Assertions.assertEquals((String)"450", max);
+    }
+
+    @Test
+    public void givenThirdStringAsLarge_ShouldReturn_ThirdStringAsMax() {
+        String max = findMax.findMaxValue("350", "110", "400");
+        Assertions.assertEquals((String)"400", max);
+    }
+
+
 }
