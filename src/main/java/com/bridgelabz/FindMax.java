@@ -3,9 +3,6 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-/*
- * Generic Class To Find Max Values
- */
 public class FindMax<E extends Comparable<E>> {
     //Array of Generic values
     E[] values;
